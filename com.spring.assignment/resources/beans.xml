@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context.xsd">
+       					   
+     <context:annotation-config />
+
+
+	<bean id="project1" class="com.spring.Assignment.com.spring.assignment.Project">
+		<property name="pId" value="201"/>
+		<property name="duration" value="6 months"/>
+		<property name="cost" value="50000"/>	
+	</bean>
+	<bean id="project2" class="com.spring.Assignment.com.spring.assignment.Project">
+        <property name="pId" value="202"/>
+        <property name="duration" value="3 months"/>
+        <property name="cost" value="250000"/>
+    </bean>
+    <bean id="project3" class="com.spring.Assignment.com.spring.assignment.Project">
+        <property name="pId" value="203"/>
+        <property name="duration" value="7 months"/>
+        <property name="cost" value="350000"/>
+    </bean>
+    
+    <bean id="e1" class="com.spring.Assignment.com.spring.assignment.Employee">
+    	<property name="empId" value="101"/>
+        <property name="name" value="Abhishek"/>
+        <property name="salary" value="70000"/>
+        <property name="address">
+        	<map>
+        		<entry key="home" value="Chennai"/>
+        		<entry key="office" value="Bangaluru"/>
+        	</map>
+        </property>
+        <property name="project" ref="project1"/>
+    </bean>
+    <bean id="e2" class="com.spring.Assignment.com.spring.assignment.Employee">
+        <property name="empId" value="102"/>
+        <property name="name" value="Ramesh"/>
+        <property name="salary" value="65000"/>
+        <property name="address">
+            <map>
+                <entry key="home" value="Coimbatore"/>
+                <entry key="office" value="Hyderabad"/>
+            </map>
+        </property>
+        <property name="project" ref="project2"/>
+    </bean>
+    <bean id="e3" class="com.spring.Assignment.com.spring.assignment.Employee">
+        <property name="empId" value="103"/>
+        <property name="name" value="Suresh"/>
+        <property name="salary" value="55000"/>
+        <property name="address">
+            <map>
+                <entry key="home" value="Madurai"/>
+                <entry key="office" value="Mumbai"/>
+            </map>
+        </property>
+        <property name="project" ref="project3"/>
+    </bean>
+
+</beans>
